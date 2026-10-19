@@ -29,11 +29,10 @@ h1{
     margin: 5px;
     color: rgba(114, 49, 49, 0.629);
 }
-input{
-    width: 200px;
-    height: 30px;
-    border-radius: 6px;
-    border: 1px solid rgb(6, 6, 6);
+li{
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+    text-decoration: underline;
 }
 button{
     width: 100px;
@@ -45,4 +44,9 @@ button{
 a{
     color: rgb(0, 0, 0);
     margin-top: 10px;
+}
+img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
 }
