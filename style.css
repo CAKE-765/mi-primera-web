@@ -50,8 +50,8 @@ a:hover{
     color: rgb(235, 5, 5);
 }
 img{
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
 }
 button:hover{
