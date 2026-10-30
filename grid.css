@@ -116,14 +116,6 @@ img {
     letter-spacing: 0.14em;
 }
 
-.cuadro2 p {
-    margin: 0;
-    font-size: clamp(17px, 1.5vw, 21px);
-    font-weight: 600;
-    line-height: 1.45;
-    letter-spacing: -0.035em;
-}
-
 .informacion {
     display: flex;
     align-items: center;
