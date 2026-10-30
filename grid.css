@@ -1,38 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    font-family: 'Space Grotesk', sans-serif;
+    color: #171717;
+    background: #f3f0e8;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    --ink: #171717;
+    --paper: #f3f0e8;
+    --acid: #d7ff3f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+}
+
+header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: 84px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px clamp(22px, 5vw, 76px);
+    border-bottom: 2px solid var(--ink);
+    background: var(--ink);
+    color: var(--paper);
+}
+
+header::after {
+    content: 'PORTAFOLIO / 2026';
+    color: var(--acid);
+    font: 500 11px 'DM Mono', monospace;
+    letter-spacing: 0.12em;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(18px, 2vw, 25px);
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+}
+
 .contenedor {
-    width: 100vw;
-    height: 100vh;
     display: grid;
-    grid-template-columns: 500px 1fr;
-    grid-template-rows: 1fr;
+    min-height: calc(100svh - 84px);
+    grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1.22fr);
 }
 
 .perfil {
-    background-color: aqua;
+    position: relative;
     display: flex;
+    min-height: 620px;
     flex-direction: column;
-    gap: 50px;
-    justify-content: center;
     align-items: center;
-
-
+    justify-content: center;
+    gap: clamp(28px, 5vh, 52px);
+    overflow: hidden;
+    padding: 56px 36px;
+    border-right: 2px solid var(--ink);
+    background-color: var(--acid);
+    background-image: radial-gradient(var(--ink) 0.8px, transparent 0.8px);
+    background-position: -5px -5px;
+    background-size: 19px 19px;
 }
 
-.informacion {
-    background-color: blueviolet;
+.perfil::before {
+    position: absolute;
+    top: 28px;
+    left: 30px;
+    content: '01 — IDENTIDAD';
+    font: 500 11px 'DM Mono', monospace;
+    letter-spacing: 0.12em;
 }
 
 .cuadro1 {
-    width: 150px;
-    height: 150px;
-    background-color: black;
-    color: aliceblue;
+    position: relative;
+    display: grid;
+    width: clamp(155px, 18vw, 220px);
+    aspect-ratio: 1;
+    place-items: center;
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+    background: var(--paper);
+    box-shadow: 9px 9px 0 var(--ink);
+}
 
+img {
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .cuadro2 {
-    width: 400px;
-    height: 300px;
-    background-color: black;
-    color: aliceblue;
+    width: min(100%, 450px);
+    padding: clamp(22px, 3vw, 34px);
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    box-shadow: 8px 8px 0 var(--ink);
+}
 
+.cuadro2::before {
+    display: block;
+    margin-bottom: 18px;
+    content: 'HOLA, SOY';
+    font: 500 11px 'DM Mono', monospace;
+    letter-spacing: 0.14em;
+}
+
+.cuadro2 p {
+    margin: 0;
+    font-size: clamp(17px, 1.5vw, 21px);
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: -0.035em;
+}
+
+.informacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(36px, 7vw, 104px);
+    background: var(--paper);
+}
+
+.descripcion {
+    position: relative;
+    width: min(100%, 780px);
+    padding: clamp(30px, 5vw, 64px);
+    border: 2px solid var(--ink);
+    background: #fffefa;
+    box-shadow: 12px 12px 0 var(--ink);
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 500;
+    line-height: 1.65;
+    letter-spacing: -0.035em;
+}
+
+.descripcion::before {
+    display: block;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--ink);
+    content: '02 — SOBRE MÍ';
+    font: 500 11px 'DM Mono', monospace;
+    letter-spacing: 0.12em;
+}
+
+@media (max-width: 760px) {
+    header {
+        min-height: 72px;
+    }
+
+    header::after {
+        font-size: 9px;
+    }
+
+    .contenedor {
+        min-height: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .perfil {
+        min-height: 0;
+        padding: 86px 24px 48px;
+        border-right: 0;
+        border-bottom: 2px solid var(--ink);
+    }
+
+    .informacion {
+        padding: 48px 24px;
+    }
+
+    .descripcion {
+        box-shadow: 8px 8px 0 var(--ink);
+    }
+}
+
+@media (max-width: 420px) {
+    header {
+        padding-inline: 18px;
+    }
+
+    header::after {
+        max-width: 75px;
+        text-align: right;
+    }
 }
